@@ -27,5 +27,8 @@ public class Execucao {
         
         System.out.println("Saldo Total: " + adc.getSaldoTotal());
         
+          Menu m  = new Menu();    
+          m.iniciar();
+    
     }
 }

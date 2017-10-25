@@ -5,7 +5,6 @@
  */
 package atividadepratica;
 
-
 import java.util.Scanner;
 
 /**
@@ -26,7 +25,9 @@ public class Menu {
 	            escolheOpcao(opcao);
 	        }while(opcao!=5);
 	    }
-
+    public void sair(){
+        
+    }
   
     public void menu(){
 
@@ -42,46 +43,41 @@ public class Menu {
 	    }
     public void escolheOpcao(int opcao){
         
-	        double valor;
-
+	        Scanner e = new Scanner(System.in);
+                double valor = 0;
+                Conta c =  new Conta();
 	        switch( opcao ){
 	            case 1:    
-	                    //extrato();
-	                    break;
+	                  
+	                  break;
 	            case 2: 
-	                    //if(saques<3){
-	                      //  System.out.print("Quanto deseja sacar: ");
-	                      //  valor = entrada.nextDouble();
-	                      //  sacar(valor);
-	                   // } else{
-	                     //   System.out.println("Limite de saques diários atingidos.\n");
-	                  //  }
-	                    break;
+	                  c.setSaca(valor);
+                          
+                           
+                           
+	                  break;
 
-	            case 3:
-	                  //  System.out.print("Quanto deseja depositar: ");
-	                 //   valor = entrada.nextDouble();
-	                 //   depositar(valor);
-	                 //   break;
+	            case 3:                                                
+                        c.deposita(valor);
+	                  
+	                  break;
 
 	            case 4: 
-	                 //   System.out.println("Sistema encerrado.");
-	                 //   break;
+                        c.atualiza(0.01);
+                        System.out.println(c.getSaldo());
+	                  break;
+                          
+                    case 5: 
+                        System.out.println("Saiu");
+	                 sair();
+                         
+	              break;
 
 	            default:
 	                    System.out.println("Opção inválida");
 	        }
 	    }
-   public static void main(String[] args){
-       
-        Menu m  = new Menu();    
-        m.entrada.nextLine();
-    
-    
+ 
 }
-}
-    
     
 
-    
-  

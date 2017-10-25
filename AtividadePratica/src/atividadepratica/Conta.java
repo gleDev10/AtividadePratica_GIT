@@ -19,6 +19,7 @@ public class Conta {
     public void saca(double valor) {
         this.saldo -= valor;
     }
+   
     
     public double getSaldo() {
         return this.saldo;
@@ -26,5 +27,12 @@ public class Conta {
     
     public void atualiza(double taxa){
         this.saldo += this.saldo * taxa;
+    }
+    
+    
+    /////////////////////////
+     public double setSaca(double valor){
+        this.saldo -= valor;
+        return this.saldo;
     }
 }
