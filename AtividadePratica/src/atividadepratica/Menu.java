@@ -44,32 +44,34 @@ public class Menu {
     public void escolheOpcao(int opcao){
         
 	        Scanner e = new Scanner(System.in);
-                double valor = 0;
+                Scanner sa = new Scanner(System.in);
+                double valor = 30;
                 Conta c =  new Conta();
 	        switch( opcao ){
 	            case 1:    
 	                  
 	                  break;
-	            case 2: 
-	                  c.setSaca(valor);
-                          
-                           
-                           
+	            case 2:
+                        valor = sa.nextDouble();
+	                c.saca(valor);
+                     
 	                  break;
 
-	            case 3:                                                
+	            case 3:     
+                        valor = sa.nextDouble();
                         c.deposita(valor);
+                        
 	                  
 	                  break;
 
 	            case 4: 
-                        c.atualiza(0.01);
-                        System.out.println(c.getSaldo());
+                      
+                        System.out.println("saldo: "+c.getSaldo());
 	                  break;
                           
                     case 5: 
                         System.out.println("Saiu");
-	                 sair();
+	                sair();
                          
 	              break;
 
