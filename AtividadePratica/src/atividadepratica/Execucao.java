@@ -5,30 +5,45 @@
  */
 package atividadepratica;
 
+import java.util.Scanner;
 /**
  *
  * @author 71600922
  */
 public class Execucao {
     public static void main(String[] args){
-        Conta c = new Conta();
+        Scanner entrada = new Scanner(System.in);
+        int opcao;
+        
         Conta cc = new ContaCorrente();
         Conta cp = new ContaPoupanca();
         
-        c.deposita(1000);
-        cc.deposita(1000);
-        cp.deposita(1000);
+        Menu m  = new Menu();
         
-        AtualizadorDeContas adc = new AtualizadorDeContas(0.01);
-        
-        adc.roda(c);
-        adc.roda(cc);
-        adc.roda(cp);
-        
-        System.out.println("Saldo Total: " + adc.getSaldoTotal());
-        
-          Menu m  = new Menu();    
-          m.iniciar();
-    
+        //do{
+            //opcao = 0;
+            
+            System.out.print("\t Em qual conta você deseja utilizar? \n");
+            System.out.print("1 - Conta Corrente \n");
+            System.out.print("2 - Conta Poupança \n");
+            System.out.print("3 - Sair \n");
+            System.out.println("Digite a opção desejada: ");
+            opcao = entrada.nextInt();
+            
+            switch(opcao){
+                case 1:
+                    m.iniciar(cc); 
+                    
+                    break;
+                case 2:
+                    m.iniciar(cp);
+                    break;
+                default: 
+                    opcao = -1;
+                    break;
+            }
+        //} while(opcao != -1);
+
+        //System.out.println(cc.getSaldo() + "  -  " + cp.getSaldo());
     }
 }

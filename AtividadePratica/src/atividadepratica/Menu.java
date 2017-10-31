@@ -14,72 +14,52 @@ import java.util.Scanner;
 public class Menu {
     
     Scanner entrada = new Scanner(System.in);
+    int opcao;
     
-    public void iniciar(){
-        
-	        int opcao;
-
-	        do{
-	            menu();
-	            opcao = entrada.nextInt();
-	            escolheOpcao(opcao);
-	        }while(opcao!=5);
-	    }
-    public void sair(){
-        
+    public void iniciar(Conta c){
+        while(this.opcao != -1) {
+            menu();
+            this.opcao = entrada.nextInt();
+            escolheOpcao(c);
+        }
     }
   
     public void menu(){
-
+        System.out.print("\t Escolha a opção desejada \n");
+        System.out.print("1 - Consultar Extrato \n");
+        System.out.print("2 - Sacar \n");
+        System.out.print("3 - Depositar \n");
+        System.out.print("4 - Saldo \n");
+        System.out.print("5 - Sair \n");
+        System.out.println("Digite a opção desejada: ");
+    }
+    
+    public void escolheOpcao(Conta c){
+        double valor = 0;
         
-	        System.out.println("\t Escolha a opção desejada");
-	        System.out.println("1 - Consultar Extrato");
-	        System.out.println("2 - Sacar");
-	        System.out.println("3 - Depositar");
-                System.out.println("4 - Saldo");
-	        System.out.println("5 - Sair\n");
-	        System.out.print("Opção: ");
-
-	    }
-    public void escolheOpcao(int opcao){
-        
-	        Scanner e = new Scanner(System.in);
-                Scanner sa = new Scanner(System.in);
-                double valor = 30;
-                Conta c =  new Conta();
-	        switch( opcao ){
-	            case 1:    
-	                  
-	                  break;
-	            case 2:
-                        valor = sa.nextDouble();
-	                c.saca(valor);
-                     
-	                  break;
-
-	            case 3:     
-                        valor = sa.nextDouble();
-                        c.deposita(valor);
-                        
-	                  
-	                  break;
-
-	            case 4: 
-                      
-                        System.out.println("saldo: "+c.getSaldo());
-	                  break;
-                          
-                    case 5: 
-                        System.out.println("Saiu");
-	                sair();
-                         
-	              break;
-
-	            default:
-	                    System.out.println("Opção inválida");
-	        }
-	    }
- 
+        switch(this.opcao){
+            case 1:    	                  
+                  break;
+            case 2:
+                System.out.println("Digite o valor de saque: ");
+                valor = entrada.nextDouble();
+                c.saca(valor);
+                System.out.println(c.getSaldo());
+                break;
+            case 3:
+                System.out.println("Digite o valor de depósito: ");
+                valor = entrada.nextDouble();
+                c.deposita(valor);                
+                System.out.println(c.getSaldo());
+                break;
+            case 4: 
+                //System.out.println("saldo: "+c.getSaldo());
+                break;
+            default:
+                this.opcao = -1;
+                break;
+        }
+    } 
 }
     
 
