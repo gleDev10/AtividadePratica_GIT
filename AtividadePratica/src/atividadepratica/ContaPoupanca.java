@@ -10,6 +10,10 @@ package atividadepratica;
  * @author 71600922
  */
 public class ContaPoupanca extends Conta{
+    public ContaPoupanca(String n, String nc){
+        super(n, nc);
+    }
+    
     public void atualiza(double taxa){
         this.saldo += this.saldo * taxa * 3;
     }

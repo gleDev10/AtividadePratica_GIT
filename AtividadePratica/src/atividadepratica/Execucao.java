@@ -15,8 +15,8 @@ public class Execucao {
         Scanner entrada = new Scanner(System.in);
         int opcao;
         
-        Conta cc = new ContaCorrente();
-        Conta cp = new ContaPoupanca();
+        Conta cc = new ContaCorrente("CC","0001");
+        Conta cp = new ContaPoupanca("CP","0002");
         
         Menu m  = new Menu();
         
@@ -32,8 +32,7 @@ public class Execucao {
             
             switch(opcao){
                 case 1:
-                    m.iniciar(cc); 
-                    
+                    m.iniciar(cc);                     
                     break;
                 case 2:
                     m.iniciar(cp);

@@ -38,22 +38,23 @@ public class Menu {
         double valor = 0;
         
         switch(this.opcao){
-            case 1:    	                  
-                  break;
+            case 1:
+                c.imprimiExtrato();
+                break;
             case 2:
                 System.out.println("Digite o valor de saque: ");
                 valor = entrada.nextDouble();
                 c.saca(valor);
-                System.out.println(c.getSaldo());
+                c.setExtrato("Saque de R$" + valor);
                 break;
             case 3:
                 System.out.println("Digite o valor de depósito: ");
                 valor = entrada.nextDouble();
                 c.deposita(valor);                
-                System.out.println(c.getSaldo());
+                c.setExtrato("Depósito de R$" + valor);
                 break;
             case 4: 
-                //System.out.println("saldo: "+c.getSaldo());
+                System.out.println("Saldo: " + c.getSaldo());
                 break;
             default:
                 this.opcao = -1;
