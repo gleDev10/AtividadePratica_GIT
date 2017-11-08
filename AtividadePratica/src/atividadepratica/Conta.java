@@ -29,6 +29,12 @@ public class Conta {
         this.saldo -= valor;
     }
    
+    public void transferencia(Conta c1, Conta c2, double valor){
+        c1.saca(valor);
+        c2.deposita(valor);
+        
+        setExtrato("Transferência de R$" + valor + " da conta " + c1.getNumConta() + " para a conta " + c2.getNumConta());
+    }
         
     public String getNome() {
         return this.nome;
