@@ -32,10 +32,10 @@ public class Execucao {
             
             switch(opcao){
                 case 1:
-                    m.iniciar(cc);                     
+                    m.iniciar(cc, cp);                     
                     break;
                 case 2:
-                    m.iniciar(cp);
+                    m.iniciar(cp, cc);
                     break;
                 default: 
                     opcao = -1;
@@ -43,6 +43,6 @@ public class Execucao {
             }
         //} while(opcao != -1);
 
-        //System.out.println(cc.getSaldo() + "  -  " + cp.getSaldo());
+        System.out.println("Saldo Conta Corrente: R$" + cc.getSaldo() + "\n Saldo Conta Poupança: R$" + cp.getSaldo());
     }
 }
